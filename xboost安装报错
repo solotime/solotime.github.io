@@ -1,0 +1,22 @@
+## Welcome to GitHub Pages
+
+详细安装过程参考了这篇博客：
+http://blog.csdn.net/xxzhangx/article/details/54908500
+还有关于报错的帖子：
+https://github.com/dmlc/xgboost/issues/909
+按照其安装时出现的错误，最后依次解决了，写下一些注意的地方，分享给大家。
+安装环境：win10 64位，
+1、关于dmlc-core报错
+mingw6这个软件有几个版本，用这个版本Git-2.15.0-64-bit时在用git执行代码
+cd dmlc-core
+​make -j4
+这一步骤的时候会报错缺失data.o这种文件，在后面几步似乎也会有缺失。
+猜测是因为mingw软件少了东西，最后改用TDM-GCC MinGW Compiler 成功执行了代码。
+下载地址：
+https://sourceforge.net/projects/tdm-gcc/?source=typ_redirect
+2、执行python setup.py install报错
+这个问题是因为缺失了一个库xgboost.dll文件
+xgboost.dll下载地址为
+链接：http://pan.baidu.com/s/1kVL2jm3 密码：07vh
+
+
